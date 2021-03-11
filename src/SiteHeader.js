@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from 'react-router-dom';
+
 import {
     Header,
     HeaderName,
@@ -13,16 +15,16 @@ import {
     SideNavItems,
     HeaderSideNavItems
 } from "carbon-components-react/lib/components/UIShell";
+
 import {
     AppSwitcher20,
     Notification20,
     UserAvatar20,
 } from '@carbon/icons-react';
-import { Link } from 'react-router-dom';
 
 function SiteHeader() {
     return (
-        <div className="container">
+        <div>
             <HeaderContainer
                 render={({ isSideNavExpanded, onClickSideNavExpand }) => (
                     <Header aria-label="Hachti kelma jdida">
