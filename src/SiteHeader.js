@@ -1,14 +1,10 @@
 import React from "react";
-import Search20 from "@carbon/icons-react/lib/search/20";
-import Notification20 from "@carbon/icons-react/lib/notification/20";
-import AppSwitcher20 from "@carbon/icons-react/lib/app-switcher/20";
 import {
     Header,
     HeaderName,
-    HeaderGlobalAction,
     HeaderGlobalBar,
+    HeaderGlobalAction,
     HeaderNavigation,
-    HeaderMenu,
     HeaderMenuItem,
     HeaderContainer,
     SkipToContent,
@@ -17,24 +13,30 @@ import {
     SideNavItems,
     HeaderSideNavItems
 } from "carbon-components-react/lib/components/UIShell";
+import {
+    AppSwitcher20,
+    Notification20,
+    UserAvatar20,
+} from '@carbon/icons-react';
+import { Link } from 'react-router-dom';
 
 function SiteHeader() {
     return (
         <div className="container">
             <HeaderContainer
                 render={({ isSideNavExpanded, onClickSideNavExpand }) => (
-                    <Header aria-label="Carbon Tutorial">
+                    <Header aria-label="Hachti kelma jdida">
                         <SkipToContent />
                         <HeaderMenuButton
                             aria-label="Open menu"
                             onClick={onClickSideNavExpand}
                             isActive={isSideNavExpanded}
                         />
-                        <HeaderName href="/" prefix="IBM">
-                            Carbon Tutorial
+                        <HeaderName element={Link} to="/" prefix="">
+                            Hachti kelma jdida
                         </HeaderName>
                         <HeaderNavigation aria-label="Carbon Tutorial">
-                            <HeaderMenuItem href="/repos">Repositories</HeaderMenuItem>
+                            <HeaderMenuItem element={Link} to="/repos">Translations</HeaderMenuItem>
                         </HeaderNavigation>
                         <SideNav
                             aria-label="Side navigation"
@@ -42,11 +44,21 @@ function SiteHeader() {
                             isPersistent={false}>
                             <SideNavItems>
                                 <HeaderSideNavItems>
-                                    <HeaderMenuItem href="/repos">Repositories</HeaderMenuItem>
+                                    <HeaderMenuItem element={Link} to="/repos">Translations</HeaderMenuItem>
                                 </HeaderSideNavItems>
                             </SideNavItems>
                         </SideNav>
-                        <HeaderGlobalBar />
+                        <HeaderGlobalBar>
+                            <HeaderGlobalAction aria-label="Notifications">
+                                <Notification20 />
+                            </HeaderGlobalAction>
+                            <HeaderGlobalAction aria-label="User Avatar">
+                                <UserAvatar20 />
+                            </HeaderGlobalAction>
+                            <HeaderGlobalAction aria-label="App Switcher">
+                                <AppSwitcher20 />
+                            </HeaderGlobalAction>
+                        </HeaderGlobalBar>
                     </Header>
                 )}
             />
