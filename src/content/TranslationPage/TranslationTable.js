@@ -28,9 +28,9 @@ const TranslationTable = ({ rows, headers }) => {
                 <TableContainer
                     title="Carbon Repositories"
                     description="A collection of public Carbon repositories.">
-                    <Table {...getTableProps()}>
-                        <TableHead>
-                            <TableRow>
+                    <Table {...getTableProps()} >
+                        <TableHead >
+                            <TableRow >
                                 <TableExpandHeader />
                                 {headers.map(header => (
                                     <TableHeader {...getHeaderProps({ header })}>
@@ -39,16 +39,16 @@ const TranslationTable = ({ rows, headers }) => {
                                 ))}
                             </TableRow>
                         </TableHead>
-                        <TableBody>
+                        <TableBody >
                             {rows.map(row => (
                                 <React.Fragment key={row.id}>
-                                    <TableExpandRow {...getRowProps({ row })}>
+                                    <TableExpandRow {...getRowProps({ row })} >
                                         {row.cells.map(cell => (
                                             <TableCell key={cell.id}>{cell.value}</TableCell>
                                         ))}
                                     </TableExpandRow>
                                     <TableExpandedRow colSpan={headers.length + 1}>
-                                        <p>Row description</p>
+                                        <p>{row.id}</p>
                                     </TableExpandedRow>
                                 </React.Fragment>
                             ))}

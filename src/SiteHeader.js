@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { Link } from 'react-router-dom';
 
 import {
@@ -23,18 +23,23 @@ import {
 } from '@carbon/icons-react';
 
 function SiteHeader() {
+    const [show, setShow] = useState(false);
+
     return (
         <div>
             <HeaderContainer
                 render={({ isSideNavExpanded, onClickSideNavExpand }) => (
                     <Header aria-label="Hachti kelma jdida">
                         <SkipToContent />
+                        <HeaderGlobalAction aria-label="App Switcher" onClick={() => setShow(!show)}>
+                            <AppSwitcher20 />
+                        </HeaderGlobalAction>
                         <HeaderMenuButton
                             aria-label="Open menu"
-                            onClick={onClickSideNavExpand}
+                            onClick={() => setShow(!show)}
                             isActive={isSideNavExpanded}
                         />
-                        <HeaderName element={Link} to="/" prefix="">
+                        <HeaderName element={Link} to="/" prefix="" onClick={() => setShow(false)}>
                             Hachti kelma jdida
                         </HeaderName>
                         <HeaderNavigation aria-label="Carbon Tutorial">
@@ -42,12 +47,16 @@ function SiteHeader() {
                         </HeaderNavigation>
                         <SideNav
                             aria-label="Side navigation"
-                            expanded={isSideNavExpanded}
+                            expanded={show}
                             isPersistent={false}>
                             <SideNavItems>
-                                <HeaderSideNavItems>
-                                    <HeaderMenuItem element={Link} to="/repos">Translations</HeaderMenuItem>
-                                </HeaderSideNavItems>
+                                <HeaderMenuItem element={Link} to="/repos" onClick={() => setShow(false)}>
+                                    Translations
+                                </HeaderMenuItem>
+                                <HeaderMenuItem element={Link} to="/" onClick={() => setShow(false)}>
+                                    Back
+                                </HeaderMenuItem>
+
                             </SideNavItems>
                         </SideNav>
                         <HeaderGlobalBar>
@@ -56,9 +65,6 @@ function SiteHeader() {
                             </HeaderGlobalAction>
                             <HeaderGlobalAction aria-label="User Avatar">
                                 <UserAvatar20 />
-                            </HeaderGlobalAction>
-                            <HeaderGlobalAction aria-label="App Switcher">
-                                <AppSwitcher20 />
                             </HeaderGlobalAction>
                         </HeaderGlobalBar>
                     </Header>
