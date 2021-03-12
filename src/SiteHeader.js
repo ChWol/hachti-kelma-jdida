@@ -12,8 +12,7 @@ import {
     SkipToContent,
     HeaderMenuButton,
     SideNav,
-    SideNavItems,
-    HeaderSideNavItems
+    SideNavItems
 } from "carbon-components-react/lib/components/UIShell";
 
 import {
@@ -43,16 +42,20 @@ function SiteHeader() {
                             Hachti kelma jdida
                         </HeaderName>
                         <HeaderNavigation aria-label="Carbon Tutorial">
-                            <HeaderMenuItem element={Link} to="/repos">Translations</HeaderMenuItem>
+                            <HeaderMenuItem element={Link} to="/translations">Translations</HeaderMenuItem>
+                            <HeaderMenuItem element={Link} to="/legal">Legal</HeaderMenuItem>
+                            <HeaderMenuItem element={Link} to="/about">About</HeaderMenuItem>
                         </HeaderNavigation>
                         <SideNav
                             aria-label="Side navigation"
                             expanded={show}
                             isPersistent={false}>
                             <SideNavItems>
-                                <HeaderMenuItem element={Link} to="/repos" onClick={() => setShow(false)}>
+                                <HeaderMenuItem element={Link} to="/translations" onClick={() => setShow(false)}>
                                     Translations
                                 </HeaderMenuItem>
+                                <HeaderMenuItem element={Link} to="/legal">Legal</HeaderMenuItem>
+                                <HeaderMenuItem element={Link} to="/about">About</HeaderMenuItem>
                                 <HeaderMenuItem element={Link} to="/" onClick={() => setShow(false)}>
                                     Back
                                 </HeaderMenuItem>

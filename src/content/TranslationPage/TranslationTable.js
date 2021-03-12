@@ -13,11 +13,12 @@ import {
     TableExpandedRow,
 } from 'carbon-components-react';
 
-const TranslationTable = ({ rows, headers }) => {
+const TranslationTable = ({translations, headers}) => {
     return (
         <DataTable
-            rows={rows}
+            isSortable
             headers={headers}
+            rows={translations}
             render={({
                          rows,
                          headers,
@@ -28,27 +29,29 @@ const TranslationTable = ({ rows, headers }) => {
                 <TableContainer
                     title="Carbon Repositories"
                     description="A collection of public Carbon repositories.">
+                    {console.log(headers)}
+                    {console.log(rows)}
                     <Table {...getTableProps()} >
-                        <TableHead >
-                            <TableRow >
-                                <TableExpandHeader />
+                        <TableHead>
+                            <TableRow>
+                                <TableExpandHeader/>
                                 {headers.map(header => (
-                                    <TableHeader {...getHeaderProps({ header })}>
+                                    <TableHeader {...getHeaderProps({header})}>
                                         {header.header}
                                     </TableHeader>
                                 ))}
                             </TableRow>
                         </TableHead>
-                        <TableBody >
+                        <TableBody>
                             {rows.map(row => (
                                 <React.Fragment key={row.id}>
-                                    <TableExpandRow {...getRowProps({ row })} >
+                                    <TableExpandRow {...getRowProps({row})} >
                                         {row.cells.map(cell => (
-                                            <TableCell key={cell.id}>{cell.value}</TableCell>
+                                            <TableCell key={cell.tunisian}>{cell.value}</TableCell>
                                         ))}
                                     </TableExpandRow>
                                     <TableExpandedRow colSpan={headers.length + 1}>
-                                        <p>{row.id}</p>
+                                        <p>Hier können weitere informative Details stehen</p>
                                     </TableExpandedRow>
                                 </React.Fragment>
                             ))}

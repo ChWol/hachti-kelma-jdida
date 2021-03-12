@@ -1,175 +1,36 @@
 import React, { useState } from 'react';
 import TranslationTable from "./TranslationTable";
 import { Search, SearchFilterButton, TextInput, DataTableSkeleton, Pagination } from 'carbon-components-react';
+import trans from "./translations";
+
 const loading = false;
 
 const headers = [
     {
-        key: 'name',
-        header: 'Name',
+        key: 'tunisian',
+        header: 'Tunisian',
     },
     {
-        key: 'createdAt',
-        header: 'Created',
+        key: 'german',
+        header: 'German',
     },
-    {
-        key: 'updatedAt',
-        header: 'Updated',
-    },
-    {
-        key: 'issueCount',
-        header: 'Open Issues',
-    },
-    {
-        key: 'stars',
-        header: 'Stars',
-    },
-    {
-        key: 'links',
-        header: 'Links',
-    },
-];
-
-const rows = [
-    {
-        id: '1',
-        name: 'Repo 1',
-        createdAt: 'Date',
-        updatedAt: 'Date',
-        issueCount: '123',
-        stars: '456',
-        links: 'Links',
-    },
-    {
-        id: '2',
-        name: 'Repo 2',
-        createdAt: 'Date',
-        updatedAt: 'Date',
-        issueCount: '123',
-        stars: '456',
-        links: 'Links',
-    },
-    {
-        id: '3',
-        name: 'Repo 3',
-        createdAt: 'Date',
-        updatedAt: 'Date',
-        issueCount: '123',
-        stars: '456',
-        links: 'Links',
-    },
-    {
-        id: '4',
-        name: 'Repo 3',
-        createdAt: 'Date',
-        updatedAt: 'Date',
-        issueCount: '123',
-        stars: '456',
-        links: 'Links',
-    },
-    {
-        id: '5',
-        name: 'Repo 3',
-        createdAt: 'Date',
-        updatedAt: 'Date',
-        issueCount: '123',
-        stars: '456',
-        links: 'Links',
-    },{
-        id: '6',
-        name: 'Repo 3',
-        createdAt: 'Date',
-        updatedAt: 'Date',
-        issueCount: '123',
-        stars: '456',
-        links: 'Links',
-    },{
-        id: '7',
-        name: 'Repo 3',
-        createdAt: 'Date',
-        updatedAt: 'Date',
-        issueCount: '123',
-        stars: '456',
-        links: 'Links',
-    },{
-        id: '8',
-        name: 'Repo 3',
-        createdAt: 'Date',
-        updatedAt: 'Date',
-        issueCount: '123',
-        stars: '456',
-        links: 'Links',
-    },
-    {
-        id: '9',
-        name: 'Repo 3',
-        createdAt: 'Date',
-        updatedAt: 'Date',
-        issueCount: '123',
-        stars: '456',
-        links: 'Links',
-    },{
-        id: '10',
-        name: 'Repo 3',
-        createdAt: 'Date',
-        updatedAt: 'Date',
-        issueCount: '123',
-        stars: '456',
-        links: 'Links',
-    },
-    {
-        id: '11',
-        name: 'Repo 3',
-        createdAt: 'Date',
-        updatedAt: 'Date',
-        issueCount: '123',
-        stars: '456',
-        links: 'Links',
-    },
-    {
-        id: '12',
-        name: 'Repo 3',
-        createdAt: 'Date',
-        updatedAt: 'Date',
-        issueCount: '123',
-        stars: '456',
-        links: 'Links',
-    },
-    {
-        id: '13',
-        name: 'Repo 3',
-        createdAt: 'Date',
-        updatedAt: 'Date',
-        issueCount: '123',
-        stars: '456',
-        links: 'Links',
-    },
-    {
-        id: '14',
-        name: 'Repo 3',
-        createdAt: 'Date',
-        updatedAt: 'Date',
-        issueCount: '123',
-        stars: '456',
-        links: 'Links',
-    }
 ];
 
 const TranslationPage = () => {
-    const [totalItems, setTotalItems] = useState(14);
+    const [totalItems, setTotalItems] = useState(trans.length);
     const [firstRowIndex, setFirstRowIndex] = useState(0);
     const [currentPageSize, setCurrentPageSize] = useState(10);
-    const [mine, showMine] = useState(false);
+
     const [search, setSearch] = useState("");
-    const [renderRows, setRows] = useState(rows);
+    const [renderRows, setRows] = useState(trans);
 
     function searcher (word) {
         setSearch(word);
         if(word === "") {
-            setRows(rows);
+            setRows(trans);
         }
         else {
-            const newRows = rows.slice().filter(element => element.name.includes(word));
+            const newRows = trans.slice().filter(element => element.german.toLowerCase().includes(word.toLowerCase()));
             setRows(newRows);
         }
     }
@@ -177,7 +38,7 @@ const TranslationPage = () => {
     if (loading)
         return (
             <DataTableSkeleton
-                columnCount={headers.length + 1}
+                columnCount={headers.length}
                 rowCount={10}
                 headers={headers}
             />
@@ -187,10 +48,9 @@ const TranslationPage = () => {
         <>
             <br/>
             <br/>
-            <button onClick={() => showMine(!mine)}>Only show mine</button>
-            <div className="bx--grid bx--grid--full-width bx--grid--no-gutter repo-page">
-                <div className="bx--row repo-page__r1">
-                    <div className="bx--col-lg-16">
+            <div>
+                <div>
+                    <div>
                         <div style={{ display: 'flex' }}>
                             <Search
                                 id="search-1"
@@ -208,7 +68,7 @@ const TranslationPage = () => {
                         />
                         <TranslationTable
                             headers={headers}
-                            rows={mine ? renderRows.slice(0, 3) : renderRows.slice(
+                            translations={renderRows.slice(
                                 firstRowIndex,
                                 firstRowIndex + currentPageSize
                             )}
