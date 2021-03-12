@@ -13,12 +13,12 @@ import {
     TableExpandedRow,
 } from 'carbon-components-react';
 
-const TranslationTable = ({translations, headers}) => {
+const TranslationTable = ({rows, headers}) => {
     return (
         <DataTable
             isSortable
             headers={headers}
-            rows={translations}
+            rows={rows}
             render={({
                          rows,
                          headers,
@@ -27,10 +27,8 @@ const TranslationTable = ({translations, headers}) => {
                          getTableProps,
                      }) => (
                 <TableContainer
-                    title="Carbon Repositories"
-                    description="A collection of public Carbon repositories.">
-                    {console.log(headers)}
-                    {console.log(rows)}
+                    title='Tunisian - German translations'
+                    description='A collection of words I have learnt.'>
                     <Table {...getTableProps()} >
                         <TableHead>
                             <TableRow>
@@ -47,11 +45,11 @@ const TranslationTable = ({translations, headers}) => {
                                 <React.Fragment key={row.id}>
                                     <TableExpandRow {...getRowProps({row})} >
                                         {row.cells.map(cell => (
-                                            <TableCell key={cell.tunisian}>{cell.value}</TableCell>
+                                            <TableCell key={cell.value}>{cell.value}</TableCell>
                                         ))}
                                     </TableExpandRow>
                                     <TableExpandedRow colSpan={headers.length + 1}>
-                                        <p>Hier können weitere informative Details stehen</p>
+                                        <p>...</p>
                                     </TableExpandedRow>
                                 </React.Fragment>
                             ))}

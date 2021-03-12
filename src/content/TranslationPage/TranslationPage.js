@@ -1,10 +1,16 @@
-import React, { useState } from 'react';
-import TranslationTable from "./TranslationTable";
-import { Search, SearchFilterButton, TextInput, DataTableSkeleton, Pagination } from 'carbon-components-react';
-import trans from "./translations";
+import React, {useState} from 'react';
+import TranslationTable from './TranslationTable';
+import {
+    Search, 
+    DataTableSkeleton, 
+    Pagination
+} from 'carbon-components-react';
+import translations from './translations';
 
+// Only important for IBM project, soon to be removed
 const loading = false;
 
+// Table headers
 const headers = [
     {
         key: 'tunisian',
@@ -17,24 +23,13 @@ const headers = [
 ];
 
 const TranslationPage = () => {
-    const [totalItems, setTotalItems] = useState(trans.length);
+    // State variables for pagination: Number of rows, current pagination-position, size of page, rows of page
+    const [totalItems, setTotalItems] = useState(translations.length);
     const [firstRowIndex, setFirstRowIndex] = useState(0);
     const [currentPageSize, setCurrentPageSize] = useState(10);
+    const [selectedRows, setSelectedRows] = useState(translations);
 
-    const [search, setSearch] = useState("");
-    const [renderRows, setRows] = useState(trans);
-
-    function searcher (word) {
-        setSearch(word);
-        if(word === "") {
-            setRows(trans);
-        }
-        else {
-            const newRows = trans.slice().filter(element => element.german.toLowerCase().includes(word.toLowerCase()));
-            setRows(newRows);
-        }
-    }
-
+    // Only important for IBM project, soon to be removed
     if (loading)
         return (
             <DataTableSkeleton
@@ -44,53 +39,49 @@ const TranslationPage = () => {
             />
         );
 
+    // Search table for rows containing a word
+    function searchWord(word) {
+        if (!word) {
+            setSelectedRows(translations);
+            setTotalItems(translations.length)
+        } else {
+            // Filtering for german as well as tunisian words
+            const filteredRows = translations.slice()
+                .filter(element => element.german.toLowerCase().includes(word.toLowerCase()) ||
+                    element.tunisian.toLowerCase().includes(word.toLowerCase()));
+            setSelectedRows(filteredRows);
+            setTotalItems(filteredRows.length)
+        }
+    }
+
     return (
-        <>
-            <br/>
-            <br/>
-            <div>
-                <div>
-                    <div>
-                        <div style={{ display: 'flex' }}>
-                            <Search
-                                id="search-1"
-                                onChange={(event) => searcher(event.target.value)}
-                            />
-                            <SearchFilterButton />
-                        </div>
-                        <TextInput
-                            helperText="Optional helper text"
-                            id="test2"
-                            value={search}
-                            invalidText="A valid value is required"
-                            labelText="Text input label"
-                            placeholder="Placeholder text"
-                        />
-                        <TranslationTable
-                            headers={headers}
-                            translations={renderRows.slice(
-                                firstRowIndex,
-                                firstRowIndex + currentPageSize
-                            )}
-                        />
-                        <Pagination
-                            totalItems={totalItems}
-                            backwardText="Previous page"
-                            forwardText="Next page"
-                            pageSize={currentPageSize}
-                            pageSizes={[5, 10, 15, 25]}
-                            itemsPerPageText="Items per page"
-                            onChange={({ page, pageSize }) => {
-                                if (pageSize !== currentPageSize) {
-                                    setCurrentPageSize(pageSize);
-                                }
-                                setFirstRowIndex(pageSize * (page - 1));
-                            }}
-                        />
-                    </div>
-                </div>
-            </div>
-        </>
+        <div style={{paddingTop: '50px'}}>
+            <Search
+                id='search'
+                onChange={(event) => searchWord(event.target.value)}
+            />
+            <TranslationTable
+                headers={headers}
+                rows={selectedRows.slice(
+                    firstRowIndex,
+                    firstRowIndex + currentPageSize
+                )}
+            />
+            <Pagination
+                totalItems={totalItems}
+                backwardText='Previous page'
+                forwardText='Next page'
+                pageSize={currentPageSize}
+                pageSizes={[5, 10, 15, 25]}
+                itemsPerPageText='Items per page'
+                onChange={({page, pageSize}) => {
+                    if (pageSize !== currentPageSize) {
+                        setCurrentPageSize(pageSize);
+                    }
+                    setFirstRowIndex(pageSize * (page - 1));
+                }}
+            />
+        </div>
     );
 };
 
