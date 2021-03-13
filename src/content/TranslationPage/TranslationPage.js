@@ -3,7 +3,8 @@ import TranslationTable from './TranslationTable';
 import {
     Search, 
     DataTableSkeleton, 
-    Pagination
+    Pagination,
+    Button
 } from 'carbon-components-react';
 import translations from './translations';
 
@@ -54,12 +55,25 @@ const TranslationPage = () => {
         }
     }
 
+    // Opening email client for suggesting new translations
+    function suggest() {
+        const address = "christopher2000.wolters@gmail.com";
+        const subject = "Suggestion for 'Hachti kelma jdida'"
+        const message = "Hi, i have the following translation suggestions for the website:"
+        document.location = "mailto:" + address + "?subject=" + subject + "&body=" + message;
+    }
+
     return (
         <div style={{paddingTop: '50px'}}>
-            <Search
-                id='search'
-                onChange={(event) => searchWord(event.target.value)}
-            />
+            <div style={{display: 'flex'}}>
+                <Search
+                    id='search'
+                    placeHolderText='Translation for...'
+                    onChange={(event) => searchWord(event.target.value)}
+                />
+                <Button kind='secondary' onClick={() => suggest()}>Suggest new translations!</Button>
+            </div>
+
             <TranslationTable
                 headers={headers}
                 rows={selectedRows.slice(
