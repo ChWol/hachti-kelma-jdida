@@ -71,7 +71,7 @@ const TranslationPage = () => {
                     placeHolderText='Translation for...'
                     onChange={(event) => searchWord(event.target.value)}
                 />
-                <Button kind='secondary' onClick={() => suggest()}>Suggest new translations!</Button>
+                <Button kind='danger' onClick={() => suggest()}>Suggest new translations!</Button>
             </div>
 
             <TranslationTable

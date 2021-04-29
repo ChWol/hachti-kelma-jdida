@@ -45,8 +45,10 @@ function SiteHeader() {
                         </HeaderName>
                         <HeaderNavigation aria-label="Carbon Tutorial">
                             <HeaderMenuItem element={Link} to="/translations">Translations</HeaderMenuItem>
+                            <HeaderMenuItem element={Link} to="/translator">Translator</HeaderMenuItem>
                             <HeaderMenuItem element={Link} to="/about">About</HeaderMenuItem>
                             <HeaderMenuItem element={Link} to="/legal">Legal</HeaderMenuItem>
+                            <HeaderMenuItem element={Link} to="/playground">Yosr's Playground</HeaderMenuItem>
                         </HeaderNavigation>
                         <SideNav
                             aria-label="Side navigation"

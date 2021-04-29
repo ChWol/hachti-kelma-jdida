@@ -8,6 +8,9 @@ import LandingPage from './content/LandingPage';
 import TranslationPage from './content/TranslationPage';
 import LegalPage from "./content/Legal";
 import AboutPage from "./content/About";
+import Playground from "./content/Playground";
+import Alphabet from "./content/AlphabetPage/Alphabet";
+import Translator from "./content/Translator/Translator";
 
 function App() {
     return (
@@ -19,6 +22,9 @@ function App() {
                     <Route path="/translations" component={TranslationPage} />
                     <Route path="/legal" component={LegalPage} />
                     <Route path="/about" component={AboutPage} />
+                    <Route path="/playground" component={Playground} />
+                    <Route path="/alphabet" component={Alphabet} />
+                    <Route path="/translator" component={Translator} />
                 </Switch>
             </Content>
         </>

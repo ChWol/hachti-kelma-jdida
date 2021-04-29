@@ -319,6 +319,16 @@ const trans = [
         tunisian: 'Moufej2a',
         german: 'Überraschung'
     },
+    {
+        id: '65',
+        tunisian: 'Lorz',
+        german: 'Rätsel'
+    },
+    {
+        id: '66',
+        tunisian: 'Aaychek',
+        german: 'Danke'
+    },
 ]
 
 export default trans;
