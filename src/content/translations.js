@@ -12,7 +12,8 @@ const trans = [
     {
         id: '3',
         tunisian: 'Ahla',
-        german: 'Hallo'
+        german: 'Hallo',
+        info: 'Pronunciation: Ah-l'
     },
     {
         id: '4',
@@ -22,12 +23,14 @@ const trans = [
     {
         id: '5',
         tunisian: 'Ya toutou',
-        german: 'Irgendwas Süßes oder so'
+        german: 'Irgendwas Süßes oder so',
+        info: 'No one knows when to use this'
     },
     {
         id: '6',
         tunisian: 'Theb tokhrej maaya?',
-        german: 'Willst du mit mir gehen?'
+        german: 'Willst du mit mir gehen?',
+        info: ':)'
     },
     {
         id: '7',
@@ -37,7 +40,8 @@ const trans = [
     {
         id: '8',
         tunisian: 'Kol aam wenti haya bkhir!',
-        german: 'Schönes neues Jahr!'
+        german: 'Schönes neues Jahr!',
+        info: "Next year we'll celebrate together ;)"
     },
     {
         id: '9',
@@ -57,12 +61,14 @@ const trans = [
     {
         id: '12',
         tunisian: 'Lebes',
-        german: 'Mir gehts gut'
+        german: 'Mir gehts gut',
+        info: 'Works as question as well'
     },
     {
         id: '13',
         tunisian: 'Khra',
-        german: 'Scheiße'
+        german: 'Scheiße',
+        info: 'Sooo expressive'
     },
     {
         id: '14',
@@ -257,7 +263,8 @@ const trans = [
     {
         id: '52',
         tunisian: 'Ahsen',
-        german: 'das beste'
+        german: 'das beste',
+        info: 'Ahsen EI-Techniker'
     },
     {
         id: '53',
@@ -312,7 +319,8 @@ const trans = [
     {
         id: '63',
         tunisian: 'Batrik',
-        german: 'Pinguin'
+        german: 'Pinguin',
+        info: "Yosr's favourite animal"
     },
     {
         id: '64',
@@ -322,12 +330,76 @@ const trans = [
     {
         id: '65',
         tunisian: 'Lorz',
-        german: 'Rätsel'
+        german: 'Rätsel',
+        info: 'Yosr is one'
     },
     {
         id: '66',
         tunisian: 'Aaychek',
         german: 'Danke'
+    },
+    {
+        id: '67',
+        tunisian: 'Le',
+        german: 'Nein',
+        info: 'Le le le'
+    },
+    {
+        id: '68',
+        tunisian: 'Saat 9array',
+        german: 'Manchmal Nerd'
+    },
+    {
+        id: '69',
+        tunisian: 'Wallah',
+        german: 'Ich schwöre'
+    },
+    {
+        id: '70',
+        tunisian: 'Tfehemna',
+        german: 'Einverstanden'
+    },
+    {
+        id: '71',
+        tunisian: 'Mchet maak',
+        german: 'Einverstanden',
+        info: 'Nur als Antwort'
+    },
+    {
+        id: '72',
+        tunisian: 'Martin',
+        german: 'Zweimal'
+    },
+    {
+        id: '73',
+        tunisian: 'Asli',
+        german: 'Eingeborener'
+    },
+    {
+        id: '74',
+        tunisian: 'Buss',
+        german: 'Kuss',
+        info: 'Compare Bavarian "Bussi"'
+    },
+    {
+        id: '75',
+        tunisian: 'Selem',
+        german: 'Frieden'
+    },
+    {
+        id: '76',
+        tunisian: 'Marhbé',
+        german: 'Willkommen'
+    },
+    {
+        id: '77',
+        tunisian: 'Tesbah aala khir',
+        german: 'Gute Nacht'
+    },
+    {
+        id: '78',
+        tunisian: 'Sbeh el khir',
+        german: 'Guten Morgen'
     },
 ]
 

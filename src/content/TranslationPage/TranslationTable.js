@@ -12,8 +12,9 @@ import {
     TableCell,
     TableExpandedRow,
 } from 'carbon-components-react';
+import translations from '../translations';
 
-const TranslationTable = ({rows, headers}) => {
+const TranslationTable = ({rows, headers, rowIndex}) => {
     return (
         <DataTable
             isSortable
@@ -41,7 +42,7 @@ const TranslationTable = ({rows, headers}) => {
                             </TableRow>
                         </TableHead>
                         <TableBody>
-                            {rows.map(row => (
+                            {rows.map((row, index) => (
                                 <React.Fragment key={row.id}>
                                     <TableExpandRow {...getRowProps({row})} >
                                         {row.cells.map(cell => (
@@ -49,7 +50,7 @@ const TranslationTable = ({rows, headers}) => {
                                         ))}
                                     </TableExpandRow>
                                     <TableExpandedRow colSpan={headers.length + 1}>
-                                        <p>...</p>
+                                        {translations[rowIndex+index].info ? translations[rowIndex+index].info : null}
                                     </TableExpandedRow>
                                 </React.Fragment>
                             ))}

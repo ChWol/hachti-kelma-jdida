@@ -6,7 +6,7 @@ import {
     Pagination,
     Button
 } from 'carbon-components-react';
-import translations from './translations';
+import translations from '../translations';
 
 // Only important for IBM project, soon to be removed
 const loading = false;
@@ -80,6 +80,7 @@ const TranslationPage = () => {
                     firstRowIndex,
                     firstRowIndex + currentPageSize
                 )}
+                rowIndex={firstRowIndex}
             />
             <Pagination
                 totalItems={totalItems}
