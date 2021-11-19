@@ -401,6 +401,31 @@ const trans = [
         tunisian: 'Sbeh el khir',
         german: 'Guten Morgen'
     },
+    {
+        id: '79',
+        tunisian: 'twahachtek',
+        german: 'Ich vermisse dich'
+    },
+    {
+        id: '80',
+        tunisian: 'warda',
+        german: 'Blume'
+    },
+    {
+        id: '81',
+        tunisian: 'farch',
+        german: 'Bett'
+    },
+    {
+        id: '82',
+        tunisian: 'sout',
+        german: 'Stimme'
+    },
+    {
+        id: '83',
+        tunisian: 'kteb',
+        german: 'Buch'
+    },
 ]
 
 export default trans;
