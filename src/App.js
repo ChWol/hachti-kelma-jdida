@@ -18,8 +18,7 @@ function App() {
             <SiteHeader/>
             <Content>
                 <Switch>
-                    <Route exact path="/" component={LandingPage} />
-                    <Route path="/translations" component={TranslationPage} />
+                    <Route exact path="/" component={TranslationPage} />
                     <Route path="/legal" component={LegalPage} />
                     <Route path="/about" component={AboutPage} />
                     <Route path="/playground" component={Playground} />

@@ -3,13 +3,13 @@ import React from 'react';
 const LegalPage = () => {
     return (
         <div style={{paddingTop: '50px'}}>
-            <h2>Impressum</h2>
+            <h3>Impressum</h3><br/>
             <p>Christopher Wolters<br/>
                 Wächterhof 1<br/>85635 Höhenkirchen-Siegertsbrunn</p>
             <p>Telefon: 49015209121100<br/>
                 E-Mail: <a href="mailto:christopher2000.wolters@gmail.com">christopher2000.wolters@gmail.com</a><br/>
             </p>
-            <br/><br/><h2>Disclaimer – rechtliche Hinweise</h2>
+            <br/><br/><h3>Disclaimer – rechtliche Hinweise</h3><br/>
             § 1 Warnhinweis zu Inhalten<br/>
             Die kostenlosen und frei zugänglichen Inhalte dieser Webseite wurden mit größtmöglicher Sorgfalt erstellt.
             Der Anbieter dieser Webseite übernimmt jedoch keine Gewähr für die Richtigkeit und Aktualität der

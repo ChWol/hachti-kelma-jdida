@@ -413,8 +413,8 @@ const trans = [
     },
     {
         id: '81',
-        tunisian: 'farch',
-        german: 'Bett'
+        tunisian: 'Ah d.h na9ra belgde',
+        german: 'Ich lerne sehr gut'
     },
     {
         id: '82',
@@ -425,6 +425,207 @@ const trans = [
         id: '83',
         tunisian: 'kteb',
         german: 'Buch'
+    },
+    {
+        id: '84',
+        tunisian: 'Nhebek',
+        german: 'Ich liebe dich'
+    },
+    {
+        id: '85',
+        tunisian: 'Mabinetnech',
+        german: 'Bitte, kein danke zwischen uns',
+        info: 'Im Norden ohne ma'
+    },
+    {
+        id: '86',
+        tunisian: 'Mabrouk',
+        german: 'Gratuliere'
+    },
+    {
+        id: '87',
+        tunisian: 'Dima',
+        german: 'Immer'
+    },
+    {
+        id: '88',
+        tunisian: 'Marhbé bik binetna',
+        german: 'Willkommen zurück'
+    },
+    {
+        id: '89',
+        tunisian: '',
+        german: ''
+    },
+    {
+        id: '90',
+        tunisian: '',
+        german: ''
+    },
+    {
+        id: '91',
+        tunisian: '',
+        german: ''
+    },
+    {
+        id: '92',
+        tunisian: '',
+        german: ''
+    },
+    {
+        id: '93',
+        tunisian: '',
+        german: ''
+    },
+    {
+        id: '94',
+        tunisian: '',
+        german: ''
+    },
+    {
+        id: '95',
+        tunisian: '',
+        german: ''
+    },
+    {
+        id: '96',
+        tunisian: '',
+        german: ''
+    },
+    {
+        id: '97',
+        tunisian: '',
+        german: ''
+    },
+    {
+        id: '98',
+        tunisian: '',
+        german: ''
+    },
+    {
+        id: '99',
+        tunisian: '',
+        german: ''
+    },
+    {
+        id: '100',
+        tunisian: '',
+        german: ''
+    },
+    {
+        id: '101',
+        tunisian: '',
+        german: ''
+    },
+    {
+        id: '102',
+        tunisian: '',
+        german: ''
+    },
+    {
+        id: '103',
+        tunisian: '',
+        german: ''
+    },
+    {
+        id: '104',
+        tunisian: '',
+        german: ''
+    },
+    {
+        id: '105',
+        tunisian: '',
+        german: ''
+    },
+    {
+        id: '106',
+        tunisian: '',
+        german: ''
+    },
+    {
+        id: '107',
+        tunisian: '',
+        german: ''
+    },
+    {
+        id: '108',
+        tunisian: '',
+        german: ''
+    },
+    {
+        id: '109',
+        tunisian: '',
+        german: ''
+    },
+    {
+        id: '110',
+        tunisian: '',
+        german: ''
+    },
+    {
+        id: '111',
+        tunisian: '',
+        german: ''
+    },
+    {
+        id: '112',
+        tunisian: '',
+        german: ''
+    },
+    {
+        id: '113',
+        tunisian: '',
+        german: ''
+    },
+    {
+        id: '114',
+        tunisian: '',
+        german: ''
+    },
+    {
+        id: '115',
+        tunisian: '',
+        german: ''
+    },
+    {
+        id: '116',
+        tunisian: '',
+        german: ''
+    },
+    {
+        id: '117',
+        tunisian: '',
+        german: ''
+    },
+    {
+        id: '118',
+        tunisian: '',
+        german: ''
+    },
+    {
+        id: '119',
+        tunisian: '',
+        german: ''
+    },
+    {
+        id: '120',
+        tunisian: '',
+        german: ''
+    },
+    {
+        id: '121',
+        tunisian: '',
+        german: ''
+    },
+    {
+        id: '122',
+        tunisian: '',
+        german: ''
+    },
+    {
+        id: '',
+        tunisian: '',
+        german: ''
     },
 ]
 

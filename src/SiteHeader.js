@@ -23,18 +23,14 @@ import {
 } from '@carbon/icons-react';
 
 function SiteHeader() {
-    // Only used for IBM project, can be removed soon
     const [show, setShow] = useState(false);
 
     return (
         <div>
             <HeaderContainer
-                render={({ isSideNavExpanded, onClickSideNavExpand }) => (
+                render={({ isSideNavExpanded }) => (
                     <Header aria-label="Hachti kelma jdida">
                         <SkipToContent />
-                        <HeaderGlobalAction aria-label="App Switcher" onClick={() => setShow(!show)}>
-                            {show ? <Close20 /> : <Menu20 />}
-                        </HeaderGlobalAction>
                         <HeaderMenuButton
                             aria-label="Open menu"
                             onClick={() => setShow(!show)}
@@ -44,7 +40,6 @@ function SiteHeader() {
                             Hachti kelma jdida
                         </HeaderName>
                         <HeaderNavigation aria-label="Carbon Tutorial">
-                            <HeaderMenuItem element={Link} to="/translations">Translations</HeaderMenuItem>
                             <HeaderMenuItem element={Link} to="/translator">Translator</HeaderMenuItem>
                             <HeaderMenuItem element={Link} to="/about">About</HeaderMenuItem>
                             <HeaderMenuItem element={Link} to="/legal">Legal</HeaderMenuItem>
