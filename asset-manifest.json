@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/hachti-kelma-jdida/static/css/main.eedeb072.chunk.css",
+    "main.js": "/hachti-kelma-jdida/static/js/main.041e4e7e.chunk.js",
+    "main.js.map": "/hachti-kelma-jdida/static/js/main.041e4e7e.chunk.js.map",
+    "runtime-main.js": "/hachti-kelma-jdida/static/js/runtime-main.ea0df9cc.js",
+    "runtime-main.js.map": "/hachti-kelma-jdida/static/js/runtime-main.ea0df9cc.js.map",
+    "static/css/2.aebb86e9.chunk.css": "/hachti-kelma-jdida/static/css/2.aebb86e9.chunk.css",
+    "static/js/2.d19206ce.chunk.js": "/hachti-kelma-jdida/static/js/2.d19206ce.chunk.js",
+    "static/js/2.d19206ce.chunk.js.map": "/hachti-kelma-jdida/static/js/2.d19206ce.chunk.js.map",
+    "index.html": "/hachti-kelma-jdida/index.html",
+    "static/css/2.aebb86e9.chunk.css.map": "/hachti-kelma-jdida/static/css/2.aebb86e9.chunk.css.map",
+    "static/css/main.eedeb072.chunk.css.map": "/hachti-kelma-jdida/static/css/main.eedeb072.chunk.css.map",
+    "static/js/2.d19206ce.chunk.js.LICENSE.txt": "/hachti-kelma-jdida/static/js/2.d19206ce.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ea0df9cc.js",
+    "static/css/2.aebb86e9.chunk.css",
+    "static/js/2.d19206ce.chunk.js",
+    "static/css/main.eedeb072.chunk.css",
+    "static/js/main.041e4e7e.chunk.js"
+  ]
+}
