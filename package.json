@@ -1,7 +1,7 @@
 {
   "name": "hachti",
   "version": "0.1.0",
-  "homepage": "http://chwol.github.io/hachti",
+  "homepage": "http://chwol.github.io/hachti-kelma-jdida",
   "private": true,
   "dependencies": {
     "@carbon/icons-react": "10.22.0",
